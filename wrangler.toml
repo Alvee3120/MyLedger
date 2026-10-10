@@ -1,0 +1,20 @@
+name = "myledger"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# ---------------------------------------------------------------------------
+# D1 database
+# ---------------------------------------------------------------------------
+# 1. Run:  npx wrangler d1 create myledger-db
+# 2. Paste the returned `database_id` over the placeholder below.
+#
+# `database_id` is an identifier, not a credential — it is safe to commit.
+# It is only meaningful together with an authenticated wrangler session.
+#
+# Keep `binding = "DB"`: the Worker reads the database as `env.DB` throughout.
+[[d1_databases]]
+binding = "DB"
+database_name = "myledger-db"
+database_id = "b20b360f-2362-47fb-9a48-44673afa7a78"
+migrations_dir = "migrations"

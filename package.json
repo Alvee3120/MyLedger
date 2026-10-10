@@ -1,0 +1,42 @@
+{
+  "name": "myledger",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MyLedger — a single-user personal finance tracker on Cloudflare Pages, Workers, and D1.",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "wrangler pages dev public --port 8788 --ip 127.0.0.1",
+    "dev:web": "vite",
+    "typecheck": "tsc -b",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name myledger",
+    "db:create": "wrangler d1 create myledger-db",
+    "db:migrate": "wrangler d1 migrations apply myledger-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply myledger-db --remote",
+    "db:seed:remote": "wrangler d1 execute myledger-db --remote --file=./migrations/0001_init.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "recharts": "^2.13.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260908.1",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "wrangler": "^4.0.0"
+  }
+}

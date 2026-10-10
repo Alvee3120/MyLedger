@@ -1,0 +1,12 @@
+# Taste
+- Prefers a Cloudflare-native full-stack: Cloudflare Pages for hosting/frontend, Cloudflare Workers (with the Hono framework for routing) for the backend API, and Cloudflare D1 (SQLite) for the database. Confidence: 0.7
+- Prefers React + Tailwind CSS on the frontend, Recharts for charts, and the Wrangler CLI for deployment. Confidence: 0.7
+- Requires solutions to stay within free tiers — explicitly avoids any paid services. Confidence: 0.6
+- Favors mobile-first responsive design and a clean, minimal UI with no unnecessary visual clutter when an app will be used primarily from a phone. Confidence: 0.6
+- Uses the Bangladeshi Taka currency symbol "৳" in financial apps. Confidence: 0.5
+- Prefers conventional, familiar auth UX: separate sign-up (username + password + confirm password) and sign-in (username + password) screens, rather than a single shared password gate. Confidence: 0.6
+- Wants password inputs to have an eye/visibility toggle so the typed password can be revealed, on both sign-up and sign-in forms. Confidence: 0.7
+- Expects concise, copy-pasteable instructions for running and verifying work locally (exact commands, ports/URLs, and expected results/status codes) so they can check it themselves. Confidence: 0.5
+- Prefers the agent to carry out operational/setup tasks directly (e.g., create accounts, generate credentials, run the commands) rather than only handing over instructions to do it themselves. Confidence: 0.5
+- Wants new features to integrate into the app's existing central views (e.g., a new kind of money movement should appear in the main History timeline and Reports) rather than staying siloed in their own dedicated section. Confidence: 0.5
+- Expects domain/business rules to be enforced (guarded) so impossible operations are rejected — e.g., you cannot move more into savings than the balance holds, or spend more than exists. Confidence: 0.5

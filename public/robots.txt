@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# MyLedger is private. Keep it out of search indexes entirely.

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0"
+    />
+    <meta name="theme-color" content="#020617" />
+    <meta name="description" content="MyLedger — a private, single-user money tracker." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="MyLedger" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <title>MyLedger</title>
+    <script>
+      // Apply the stored theme before first paint to avoid a flash. The
+      // theme-color meta is updated here too, otherwise a light-mode reload
+      // keeps the dark status bar the markup was authored with (theme.ts only
+      // syncs it once the bundle boots).
+      try {
+        var stored = localStorage.getItem('myledger.theme')
+        var dark = stored ? stored === 'dark' : !window.matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.classList.toggle('dark', dark)
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', dark ? '#020617' : '#f8fafc')
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

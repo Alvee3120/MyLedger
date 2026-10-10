@@ -1,0 +1,4 @@
+# Copy this file to `.dev.vars` for local development.
+# AUTH_SECRET signs the session cookie — use a long random string in production:
+#   openssl rand -base64 48
+AUTH_SECRET="dev-only-insecure-secret-change-me"
